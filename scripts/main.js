@@ -1,15 +1,16 @@
-let body = document.querySelector(`body`);
+let screenBody = document.querySelector(`body`);
+let screenKeys = Array.from(document.querySelectorAll(`.key`));
 
-function Key(keyId, audioSrc) {
-  this.keyId = keyId;
+function Key(letter, audioSrc) {
+  this.letter = letter;
   this.audioSrc = audioSrc;
   this.clear = () => {
-    this.keyId = ``;
+    this.letter = ``;
     this.audioSrc = ``;
   };
 }
 
-let keys = [
+let drumKeys = [
   new Key(`a`, `media/clap.wav`),
   new Key(`s`, `media/hihat.wav`),
   new Key(`d`, `media/kick.wav`),
@@ -21,38 +22,54 @@ let keys = [
   new Key(`l`, `media/tink.wav`),
 ];
 
-body.addEventListener('keydown', (event) => {
-  let selection = new Key(``, ``);
-  applySelection(selection, event.key);
-  changeKeyStyle(selection.keyId);
-  playSound(selection.audioSrc);
+screenBody.addEventListener(`keydown`, (event) => {
+  let selected = new Key(``, ``);
+  let eventLetter = event.key;
+  applySelected(selected, eventLetter);
+  toggleStyle(selected.letter);
+  playSound(selected.audioSrc);
 });
 
-function applySelection(selection, eventKey) {
-  for (i = 0; i < keys.length; i++) {
-    if (keys[i].keyId === eventKey) {
-      selection.keyId = keys[i].keyId;
-      selection.audioSrc = keys[i].audioSrc;
+screenKeys.forEach((screenKey) => {
+  screenKey.addEventListener(`click`, (event) => {
+    let selected = new Key(``, ``);
+    let eventLetter = ``;
+    if ((event.target.nodeName === `H1`) || (event.target.nodeName === `P`)) {
+      eventLetter = event.path[1].id;
+    } else {
+      eventLetter = event.path[0].id;
+    }
+    applySelected(selected, eventLetter);
+    toggleStyle(selected.letter);
+    playSound(selected.audioSrc);
+  });
+});
+
+function applySelected(selected, eventLetter) {
+  for (i = 0; i < drumKeys.length; i++) {
+    if (drumKeys[i].letter === eventLetter) {
+      selected.letter = drumKeys[i].letter;
+      selected.audioSrc = drumKeys[i].audioSrc;
       break;
     }
-    selection.clear();
+    selected.clear();
   }
 }
 
-function changeKeyStyle(selectionKeyId) {
-  if (selectionKeyId) {
-    let key = document.getElementById(selectionKeyId);
-    key.classList.toggle(`key-down`);
+function toggleStyle(selectedLetter) {
+  if (selectedLetter) {
+    let keyToStyle = document.getElementById(selectedLetter);
+    keyToStyle.classList.toggle(`key-down`);
     window.setTimeout(() => {
-      key.classList.toggle(`key-down`);
+      keyToStyle.classList.toggle(`key-down`);
     }, 100);
   }
 }
 
-function playSound(selectionAudioSrc) {
-  if (selectionAudioSrc) {
+function playSound(selectedAudioSrc) {
+  if (selectedAudioSrc) {
     let sound = document.createElement(`AUDIO`);
-    sound.src = selectionAudioSrc;
+    sound.src = selectedAudioSrc;
     sound.play();
   }
 }
