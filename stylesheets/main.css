@@ -1,0 +1,35 @@
+body {
+  background-image: url(../media/audience.jpg);
+  background-color: darkgray;
+}
+
+.keyboard {
+  padding: 50px;
+}
+
+.key {
+  background-color: rgba(0, 0, 0, .5);
+  border: 3px solid black;
+  border-radius: 3px;
+  float: left;
+  margin: 0 5px;
+  padding: 10px;
+  text-align: center;
+  width: 90px;
+}
+
+.key-down {
+  color: red;
+}
+
+.letter {
+  color: white;
+  font-family: 'Coustard', serif;
+  font-size: 2em;
+}
+
+.description {
+  color: #fdc331;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.5em;
+}
