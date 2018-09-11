@@ -1,6 +1,11 @@
 body {
-  background-image: url(../media/audience.jpg);
+  /* From CSS Tricks */
+  /* https://css-tricks.com/perfect-full-page-background-image/ */
+  background-attachment: fixed;
   background-color: darkgray;
+  background-image: url(../media/audience.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .keyboard {
