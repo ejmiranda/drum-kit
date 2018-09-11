@@ -7,4 +7,4 @@
 - Create an onscreen keyboard to play different sounds when keys are pressed.
 - Include first object constructor: `Key`. 
 
-> **_"I have come here to chew bubblegum and kick ass. And I’m all out of bubblegum."_** - John Nada
+> **_"I have come here to chew bubblegum and kick ass... and I’m all out of bubblegum"_** - John Nada
