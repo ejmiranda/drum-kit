@@ -1,4 +1,3 @@
-let screenBody = document.querySelector(`body`);
 let screenKeys = Array.from(document.querySelectorAll(`.key`));
 
 function Key(letter, audioSrc) {
@@ -22,7 +21,7 @@ let drumKeys = [
   new Key(`l`, `media/tink.wav`),
 ];
 
-screenBody.addEventListener(`keydown`, (event) => {
+window.addEventListener(`keydown`, (event) => {
   applySelected(event.key);
 });
 
