@@ -43,6 +43,9 @@ function changeKeyStyle(selectionKeyId) {
   if (selectionKeyId) {
     let key = document.getElementById(selectionKeyId);
     key.classList.toggle(`key-down`);
+    window.setTimeout(() => {
+      key.classList.toggle(`key-down`);
+    }, 100);
   }
 }
 
