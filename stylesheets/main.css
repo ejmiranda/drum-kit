@@ -32,6 +32,10 @@ body {
   width: 90px;
 }
 
+.key:hover {
+  cursor: pointer;
+}
+
 .key-down {
   border: 3px solid #fdc331;
   box-shadow: 0 0 7px 2px #fdc331;
