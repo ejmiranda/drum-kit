@@ -1,4 +1,4 @@
-# Drum Kit (In Progress)
+# Drum Kit
 
 ![Drum Kit Screen Shot](https://raw.githubusercontent.com/ejmiranda/drum-kit/master/meta/screenshot.png)
 
