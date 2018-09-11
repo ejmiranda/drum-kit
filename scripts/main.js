@@ -23,29 +23,23 @@ let drumKeys = [
 ];
 
 screenBody.addEventListener(`keydown`, (event) => {
-  let selected = new Key(``, ``);
-  let eventLetter = event.key;
-  applySelected(selected, eventLetter);
-  toggleStyle(selected.letter);
-  playSound(selected.audioSrc);
+  applySelected(event.key);
 });
 
 screenKeys.forEach((screenKey) => {
   screenKey.addEventListener(`click`, (event) => {
-    let selected = new Key(``, ``);
     let eventLetter = ``;
     if ((event.target.nodeName === `H1`) || (event.target.nodeName === `P`)) {
       eventLetter = event.path[1].id;
     } else {
       eventLetter = event.path[0].id;
     }
-    applySelected(selected, eventLetter);
-    toggleStyle(selected.letter);
-    playSound(selected.audioSrc);
+    applySelected(eventLetter);
   });
 });
 
-function applySelected(selected, eventLetter) {
+function applySelected(eventLetter) {
+  let selected = new Key(``, ``);
   for (i = 0; i < drumKeys.length; i++) {
     if (drumKeys[i].letter === eventLetter) {
       selected.letter = drumKeys[i].letter;
@@ -54,6 +48,8 @@ function applySelected(selected, eventLetter) {
     }
     selected.clear();
   }
+  toggleStyle(selected.letter);
+  playSound(selected.audioSrc);
 }
 
 function toggleStyle(selectedLetter) {
