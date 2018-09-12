@@ -1,6 +1,8 @@
 # Drum Kit
 
-![Drum Kit Screen Shot](https://raw.githubusercontent.com/ejmiranda/drum-kit/master/meta/screenshot.png)
+![Drum Kit Screenshot](https://raw.githubusercontent.com/ejmiranda/drum-kit/master/meta/screenshot.png)
+
+**[View Live](https://ejmiranda.github.io/drum-kit/)**
 
 **Description:**
 - From Wes Bos's [JavaScript 30 Day Challenge](https://github.com/wesbos/JavaScript30).
