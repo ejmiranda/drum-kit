@@ -10,4 +10,4 @@
 - First use of object constructors: `Key`. 
 - First use of the audio element.
 
-> **_"I have come here to chew bubblegum and kick ass... and I’m all out of bubblegum"_** - John Nada
+> **_"Not quite my tempo"_** - Terence Fletcher
