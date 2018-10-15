@@ -10,4 +10,4 @@
 - First use of object constructors: `Key`. 
 - First use of the audio element.
 
-> **_"Not quite my tempo"_** - Terence Fletcher
+> **_"Not quite my tempo."_** - Terence Fletcher
